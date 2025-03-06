@@ -1,0 +1,54 @@
+:root {
+    --main-color: #ffffff;
+    --whiter-color: #fbfbfb;
+    --primary-color: #48B6B4;
+    --secondary-color: #2A8A89;
+    --minor-color: #2CF8EF;
+    --light-green: #A0E6E3;
+    --charcoal-black: #333333;
+    --button-color: #FFA500;
+    --dark-blue: #1C3D5A;
+    --gray-color: #c3c3c3;
+    --black-color: black;
+
+    --swiper-background: #04605ea9;
+    --swiper-background-1: #1c3d5aa2;
+    --swiper-background-red: #3e3e3e8d;
+
+    --box-shadow: 0.5px 0.5px 5px 0px rgba(0,0,0,0.5);
+}
+
+.layout-component {
+    width: 100vw;
+    background: var(--whiter-color);
+}
+
+.layoutContainer {
+    width: 100vw;
+    max-width: 1440px;
+    overflow-x: hidden;
+    background: var(--main-color);
+}
+
+.footer {
+    padding: 0 3%;
+    background: var(--dark-blue);
+}
+
+
+
+
+/*--------------MEDIA QUERY AND SCREEN--------------*/
+@media screen and (max-width: 770px){
+    .layout-component {
+        
+        /* highlighting */
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}

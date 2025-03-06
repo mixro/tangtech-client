@@ -1,0 +1,15 @@
+.link-main {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-blue {
+  color: blue;
+  cursor: pointer;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}

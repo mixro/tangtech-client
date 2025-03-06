@@ -1,0 +1,130 @@
+.footer_container {
+    color: white;
+    padding: 3% 0;
+}
+
+    /*----------------------- footer top ------------------------*/
+.footer_top {
+    display: flex;
+    padding-bottom: 2%;
+    gap: 8%;
+}
+
+.footerTop_left {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    flex-basis: 68%;
+    padding-right: 2%;
+}
+
+.footerTop_Item {
+    flex-basis: fill;
+}
+
+.footerTop_Item h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--button-color);
+}
+
+.footerLinks_div {
+    padding-bottom: 10px;
+}
+
+.footerLinks-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    color: var(--button-color);
+}
+
+.footerLinks-icon p {
+    color: white;
+}
+
+.footerTop_right {
+    flex: 1;
+}
+
+.footerRight-div h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--button-color);
+}
+
+.footerRight_Icons {
+    display: flex;
+    align-items: center;
+    gap: 6%;
+}
+
+.footerRight_icon {
+    cursor: pointer;
+}
+
+.footerRight_icon:hover {
+    color: var(--button-color);
+}
+
+    /*--------------------------- footer bottom -----------------------------*/
+.footer_bottom {
+    border-top: 1.5px solid var(--button-color);
+    padding-top: 1.5%;
+}
+
+.footer_bottom p span {
+    font-weight: bold;
+}
+
+
+
+
+
+    /*---------------------- MEDIA QUERYING -----------------------------*/
+@media screen and (max-width: 1028px) {
+    .footer_top {
+        flex-direction: column;
+    }
+
+    .footerTop_left {
+        padding-bottom: 3%;
+    }
+}
+
+
+
+@media screen and (max-width: 730px) {
+    .footer_top {
+        padding-bottom: 4%;
+        padding-top: 10%;
+    }
+
+    .footerTop_left {
+        flex-direction: column;
+    }
+
+    .footerTop_Item {
+        padding-bottom: 8%;
+    }
+
+    .footerTop_Item h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .footerTop_right {
+        padding-bottom: 6%;
+    }
+
+    .footer_bottom {
+        padding-top: 7%;
+    }
+
+    .footer_bottom p:nth-child(1) {
+        margin-bottom: 10px;
+    }
+}
