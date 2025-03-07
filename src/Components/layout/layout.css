@@ -7,9 +7,12 @@
     --light-green: #A0E6E3;
     --charcoal-black: #333333;
     --button-color: #FFA500;
+    --orange-color: #ff5e00;
     --dark-blue: #1C3D5A;
     --gray-color: #c3c3c3;
     --black-color: black;
+
+    --transparent-orange: #ff5e0090;
 
     --swiper-background: #04605ea9;
     --swiper-background-1: #1c3d5aa2;
@@ -32,16 +35,22 @@
 
 .footer {
     padding: 0 3%;
-    background: var(--dark-blue);
+    background: linear-gradient(120deg, #193751, 35%, #0b263d);
 }
 
+.general-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 27px;
+    font-weight: 600;
+}
 
 
 
 /*--------------MEDIA QUERY AND SCREEN--------------*/
 @media screen and (max-width: 770px){
     .layout-component {
-        
+
         /* highlighting */
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;

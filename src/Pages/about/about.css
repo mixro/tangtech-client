@@ -1,0 +1,123 @@
+.about-container {
+    width: 100%;
+}
+
+.about-wrapper {
+    padding: 4% 6%;
+}
+
+.about-top {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.about-middle h3 {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 20px 0 15px;
+}
+
+.about-top p, .about-middle p {
+    line-height: 30px;
+}
+
+    /*------------------ about team ------------------*/
+.about-team {
+    padding-top: 40px;
+    margin-top: 50px;
+    border-top: 1px solid gray;
+}
+
+.about-team h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.about-team-top p {
+    text-align: center;
+    line-height: 30px;
+}
+
+.about-team-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    gap: 4%;
+}
+
+.about-team-item {
+    display: flex;
+    gap: 20px;
+    flex-basis: 48%;
+    margin-bottom: 40px;
+}
+
+.about-item-left {
+    padding: 4px;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.about-item-left img {
+    width: 120px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-team-right {
+    flex: 1;
+}
+
+.about-team-right p:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 5px 0 10px;
+    font-size: 17px;
+}
+
+.about-team-right p:nth-child(2) span, .about-team-right p:nth-child(3) span {
+    color: var(--orange-color);
+    font-weight: 600;
+}
+
+.about-team-right p:nth-child(3) {
+    margin-top: 5px;
+}
+
+
+
+
+/*--------------MEDIA QUERY AND SCREEN--------------*/
+@media screen and (max-width: 770px) {
+    .about-wrapper {
+        padding: 30px 4%; 
+    }
+
+    .about-top p {
+        text-align: left;
+    }
+
+    .about-team-top p {
+        text-align: left;
+    }
+
+    .about-team-item {
+        gap: 15px;
+        flex-basis: 100%;
+    }
+
+    .about-item-left img {
+        width: 70px;
+    }
+
+    .about-team-right {
+        flex: 1;
+    }
+}

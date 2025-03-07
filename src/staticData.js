@@ -1,4 +1,4 @@
-import { Category, Diversity3, ElectricalServices, Extension, Groups, Home, Info, Lan, PrecisionManufacturing, School, Security } from "@mui/icons-material"
+import { Category, Construction, ElectricalServices, Groups, Home, Info, Lan, Phone, PrecisionManufacturing, School, Security } from "@mui/icons-material"
 
 export const NavsLink = [
     {
@@ -27,27 +27,27 @@ export const NavsLink = [
     },
     {
         id: 5,
+        title: "Projects",
+        path: "/projects",
+        icon: <Construction sx={{color: "#555555", fontSize: 28}} />
+    },
+    {
+        id: 6,
         title: "Customers",
         path: "/customers",
         icon: <Groups sx={{color: "#555555", fontSize: 28}} />
     },
     {
-        id: 6,
-        title: "Team",
-        path: "/team",
-        icon: <Diversity3 sx={{color: "#555555", fontSize: 28}} />
-    },
-    {
         id: 7,
-        title: "Expertise",
-        path: "/expertise",
-        icon: <Extension sx={{color: "#555555", fontSize: 28}} />
+        title: "About Us",
+        path: "/about-us",
+        icon: <Info sx={{color: "#555555", fontSize: 28}} />
     },
     {
         id: 8,
-        title: "About us",
-        path: "/about_us",
-        icon: <Info sx={{color: "#555555", fontSize: 28}} />
+        title: "Contact",
+        path: "/contact-us",
+        icon: <Phone sx={{color: "#555555", fontSize: 28}} />
     },
 ]
 
@@ -164,4 +164,86 @@ export const swiperProducts = [
         image: "/assets/siemens.png",
         desc: "The 8DQ1 GIS switchgear supports voltages from 72.5 kV to 550 kV. It features compact designs for space efficiency, arc-resistant enclosures, and digital monitoring systems for enhanced safety and reliability."
     },
+];
+
+export const customersLogo = [
+    {
+        id: 1,
+        img: "/assets/pic-1.png"
+    },
+    {
+        id: 2,
+        img: "/assets/pic-3.png"
+    },
+    {
+        id: 3,
+        img: "/assets/pic-2.png"
+    },
+    {
+        id: 4,
+        img: "/assets/pic-4.png"
+    },
+    {
+        id: 5,
+        img: "/assets/pic-5.png"
+    },
+    {
+        id: 6,
+        img: "/assets/pic-6.png"
+    },
+    {
+        id: 7,
+        img: "/assets/pic-7.png"
+    }
+]
+
+export const TeamMembers = [
+    {
+        id: 1,
+        name: "Eng. Allen Mdendemi",
+        qualification: "Bachelor of Engineering in Electrical Engineering",
+        position: "Technical Director",
+    },
+    {
+        id: 2,
+        name: "Eng. Adriano Kamoye",
+        qualification: "Bachelor of Engineering in Electronics and Telecommunication",
+        position: "Managing Director",
+    },
+    {
+        id: 3,
+        name: "Lali Mbuya",
+        qualification: "Ordinary Diploma in Electronics and Telecommunication Engineering",
+        position: "Technician",
+    },
+    {
+        id: 4,
+        name: "Isaac Mahofoli",
+        qualification: "Ordinary Diploma in Electrical Engineering",
+        position: "Site Supervisor",
+    },
+    {
+        id: 5,
+        name: "Rodrick Mbanga",
+        qualification: "Ordinary Diploma in Computer Engineering",
+        position: "Network and Security System Supervisor",
+    },
+    {
+        id: 6,
+        name: "Perfect Mrina",
+        qualification: "Ordinary Diploma in Renewable Energy Engineering",
+        position: "Solar Technician",
+    },
+    {
+        id: 7,
+        name: "Michael Paul",
+        qualification: "Ordinary Diploma in Electrical Engineering",
+        position: "Technician",
+    },
+    {
+        id: 8,
+        name: "Ramadhani Athuman",
+        qualification: "Certificate of VTC in Electrical Installation",
+        position: "Generator Electrician",
+    }
 ];

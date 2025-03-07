@@ -47,9 +47,9 @@ const Home = () => {
                   <img src="/assets/back-3.jpg" className='swiper-background' alt="PCB" />
 
                   <div className="swiper-desc desc-2">
-                    <h2>HV Quality Products</h2>
-                    <p className="swiper-text-large">We provide a range of high-voltage (HV) products, including transformers, switchgear, circuit breakers, transmission cables, and surge arresters, designed for efficient power distribution and system protection</p>
-                    <p className="swiper-text-small">We offer high-voltage products, including transformers, switchgear, circuit breakers, cables, and surge arresters for efficient power distribution and system protection.</p>                  
+                    <h2>Electrical Products</h2>
+                    <p className="swiper-text-large">We provide a range of Electrical products, including transformers, switchgear, circuit breakers, transmission cables, and surge arresters, designed for efficient power distribution and system protection</p>
+                    <p className="swiper-text-small">We offer Electrical products, including transformers, switchgear, circuit breakers, cables, and surge arresters for efficient power distribution and system protection.</p>                  
                     <div className="swiper-button">
                       <button>Explore Products..</button>
                     </div>
@@ -96,7 +96,7 @@ const Home = () => {
             </div>
           </div>
           <div className="companyService_Item">
-            <h2>HV QUALITY PRODUCTS</h2>
+            <h2>ELECTRICAL PRODUCTS</h2>
             <div className="companyService_desc">
               <div className="companyService-text">
                 <ul>

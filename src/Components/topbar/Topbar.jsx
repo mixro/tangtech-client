@@ -50,7 +50,7 @@ const Topbar = () => {
       <Divider />
 
       <List>
-          {NavsLink.slice(5, 8).map((link) => (
+          {NavsLink.slice(4, 8).map((link) => (
               <ListItem key={link.id} disablePadding>
                   <Link to={`${link.path}`} className='sidebar-links'>
                       <ListItemButton  sx={{width: "auto"}} >
@@ -80,7 +80,7 @@ const Topbar = () => {
                     <div className="topbar-top-item">
                         <Email sx={{ fontSize: { xs: 20, sm: 25, md: 25, lg: 25, xl: 25 } }} />
                         <a href='mailto:tangtech@engineering.com' className='link-main'>
-                          tangtech@engineering.com
+                          info@tangtech.com
                         </a>
                     </div>
                 </div>

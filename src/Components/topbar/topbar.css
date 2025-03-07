@@ -144,6 +144,11 @@
         font-size: 14px;
     }
 
+    .topbar-below {
+        padding: 8px 2% 5px;
+        box-shadow: 2px 2px 5px #60606067;
+    }
+
     .topbar-links {
         display: none;
     }
