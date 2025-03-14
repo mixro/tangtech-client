@@ -1,0 +1,114 @@
+.partners-wrapper p {
+    font-size: 17px;
+}
+
+.partners-wrapper p span {
+    font-weight: 600;
+}
+
+.partners-logo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding-top: 80px;
+}
+
+.partners-item {
+    flex-basis: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.partners-item-desc {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.partners-item-desc p {
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: blue;
+}
+
+.partners-item-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners-item-image img {
+    width: 75%;
+    aspect-ratio: 1/0.5;
+    object-fit: contain;
+}
+
+.partners-info {
+    width: 100%;
+    padding: 0;
+}
+
+.partners-info p {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-size: 15px;
+    width: 100%;
+}
+
+
+
+/*--------------MEDIA QUERY AND SCREEN--------------*/
+@media screen and (max-width: 770px) {
+    .partners-logo {
+        flex-direction: column;
+    }
+
+    .partners-wrapper p {
+        text-align: left;
+    }
+
+    .partners-item {
+        margin-bottom: 40px;
+    }
+
+    .partners-item-desc {
+        border-bottom: 1px solid gray;
+    }
+
+    .partners-item-desc p {
+        text-align: left;
+    }
+
+    .partners-item-image img {
+        width: 70%;
+    }
+
+    .partners-info p {
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        -webkit-box-orient: vertical;
+        font-size: 15px;
+        width: 100%;
+    }
+}

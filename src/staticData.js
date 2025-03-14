@@ -1,53 +1,71 @@
-import { Category, Construction, ElectricalServices, Groups, Home, Info, Lan, Phone, PrecisionManufacturing, School, Security } from "@mui/icons-material"
+import { Category, ElectricalServices, Groups, Handshake, Home, Info, Lan, Login, PersonAdd, Phone, PrecisionManufacturing, School, Security, ShoppingCart } from "@mui/icons-material"
 
 export const NavsLink = [
     {
         id: 1,
         title: "Home",
         path: "/",
-        icon: <Home sx={{color: "#333333", fontSize: 28}} />,
+        icon: <Home sx={{color: "#333333", fontSize: 24}} />,
     },
     {
         id: 2,
         title: "Products",
         path: "/products",
-        icon: <Category sx={{color: "#555555", fontSize: 28}} />,
+        icon: <Category sx={{color: "#555555", fontSize: 24}} />,
     },
     {
         id: 3,
         title: "Services",
         path: "/services",
-        icon: <ElectricalServices sx={{color: "#555555", fontSize: 28}} />,
+        icon: <ElectricalServices sx={{color: "#555555", fontSize: 24}} />,
     },
     {
         id: 4,
-        title: "Training",
-        path: "/training",
-        icon: <School sx={{color: "#555555", fontSize: 28}} />,
+        title: "Trainings",
+        path: "/trainings",
+        icon: <School sx={{color: "#555555", fontSize: 24}} />,
     },
     {
         id: 5,
-        title: "Projects",
-        path: "/projects",
-        icon: <Construction sx={{color: "#555555", fontSize: 28}} />
+        title: "Partners",
+        path: "/partners",
+        icon: <Handshake sx={{color: "#555555", fontSize: 24}} />
     },
     {
         id: 6,
         title: "Customers",
         path: "/customers",
-        icon: <Groups sx={{color: "#555555", fontSize: 28}} />
+        icon: <Groups sx={{color: "#555555", fontSize: 24}} />
     },
     {
         id: 7,
         title: "About Us",
         path: "/about-us",
-        icon: <Info sx={{color: "#555555", fontSize: 28}} />
+        icon: <Info sx={{color: "#555555", fontSize: 24}} />
     },
     {
         id: 8,
         title: "Contact",
         path: "/contact-us",
-        icon: <Phone sx={{color: "#555555", fontSize: 28}} />
+        icon: <Phone sx={{color: "#555555", fontSize: 24}} />
+    },
+    {
+        id: 9,
+        title: "My Cart",
+        path: "/cart",
+        icon: <ShoppingCart sx={{color: "#555555", fontSize: 24}} />
+    },
+    {
+        id: 10,
+        title: "Login",
+        path: "/login",
+        icon: <Login sx={{color: "#555555", fontSize: 24}} />
+    },
+    {
+        id: 11,
+        title: "Register",
+        path: "/register",
+        icon: <PersonAdd sx={{color: "#555555", fontSize: 24}} />
     },
 ]
 
@@ -108,22 +126,22 @@ export const servicesLinks = [
 export const productsLinks = [
     {
         id: 1,
-        name: "Circuit breaker",
+        name: "Power Equipments",
         path: "/products",
     },
     {
         id: 2,
-        name: "Switchgear",
+        name: "Protection & Safety Devices",
         path: "/products",
     },
     {
         id: 3,
-        name: "HV cables",
+        name: "Testing & Monitoring Equipments",
         path: "/products",
     },
     {
         id: 4,
-        name: "Voltage regulators",
+        name: "Control & Automation Equipments",
         path: "/products",
     },
 ]
@@ -173,29 +191,62 @@ export const customersLogo = [
     },
     {
         id: 2,
-        img: "/assets/pic-3.png"
+        img: "/assets/rotana.png"
     },
     {
         id: 3,
-        img: "/assets/pic-2.png"
+        img: "/assets/pic-3.png"
     },
     {
         id: 4,
-        img: "/assets/pic-4.png"
+        img: "/assets/hyatt.png"
     },
     {
         id: 5,
-        img: "/assets/pic-5.png"
+        img: "/assets/jubilee.png"
     },
     {
         id: 6,
-        img: "/assets/pic-6.png"
+        img: "/assets/mcl.png"
     },
     {
         id: 7,
         img: "/assets/pic-7.png"
     }
 ]
+
+export const partnersLogo = [
+    {
+        id: 1,
+        img: "/assets/partner-1.png",
+        company: "Schneider Electric",
+        desc: "A global leader in energy management and automation, providing advanced electrical solutions, smart grid technology, and sustainable power distribution systems."
+    },
+    {
+        id: 2,
+        img: "/assets/partner-4.png",
+        company: "AFRICAB",
+        desc: "A leading manufacturer of electrical cables and wiring accessories, supplying high-quality, durable products essential for power distribution and industrial applications."
+    },
+    {
+        id: 3,
+        img: "/assets/partner-2.png",
+        company: "ABB",
+        desc: "Specializes in electrification, automation, and robotics, offering high-voltage equipment, switchgear, and innovative power solutions for industrial, commercial, and utility applications."
+    },
+    {
+        id: 4,
+        img: "/assets/partner-3.png",
+        company: "TELA TECHNOLOGY",
+        desc: "Focuses on ICT infrastructure, networking, and security solutions, delivering cutting-edge communication technologies and automation systems for various industries."
+    },
+    {
+        id: 5,
+        img: "/assets/partner-5.png",
+        company: "DIT Teaching Factory",
+        desc: "Provides hands-on technical training in electrical, automation, and engineering fields, ensuring skilled workforce development and industry collaboration."
+    }
+];
 
 export const TeamMembers = [
     {
@@ -213,25 +264,25 @@ export const TeamMembers = [
     {
         id: 3,
         name: "Lali Mbuya",
-        qualification: "Ordinary Diploma in Electronics and Telecommunication Engineering",
+        qualification: "Bachelor of Engineering in Electronics and Telecommunication",
         position: "Technician",
     },
     {
         id: 4,
         name: "Isaac Mahofoli",
-        qualification: "Ordinary Diploma in Electrical Engineering",
+        qualification: "Bachelor of Engineering in Electrical Engineering",
         position: "Site Supervisor",
     },
     {
         id: 5,
         name: "Rodrick Mbanga",
-        qualification: "Ordinary Diploma in Computer Engineering",
+        qualification: "Bachelor of Engineering in Computer Engineering",
         position: "Network and Security System Supervisor",
     },
     {
         id: 6,
         name: "Perfect Mrina",
-        qualification: "Ordinary Diploma in Renewable Energy Engineering",
+        qualification: "Bachelor of Engineering in Electrical Engineering",
         position: "Solar Technician",
     },
     {
@@ -245,5 +296,105 @@ export const TeamMembers = [
         name: "Ramadhani Athuman",
         qualification: "Certificate of VTC in Electrical Installation",
         position: "Generator Electrician",
+    }
+];
+
+
+export const dummyCategories = [
+    {
+        id: 1,
+        name: "Electrical services"
+    },
+    {
+        id: 2,
+        name: "ICT solutions"
+    },
+    {
+        id: 3,
+        name: "Security solutions"
+    },
+    {
+        id: 4,
+        name: "Automation & control system"
+    },
+]
+
+export const dummyBrands = [
+    {
+        id: 1,
+        name: "Siemens"
+    },
+    {
+        id: 2,
+        name: "Schneider"
+    },
+    {
+        id: 3,
+        name: "ABB"
+    },
+    {
+        id: 4,
+        name: "Omron"
+    },
+    {
+        id: 5,
+        name: "Huawei"
+    },
+]
+
+
+export const AdditionalResources = [
+    {
+        id:1,
+        type: "Other name",
+        desc: "1742-AESEB1S",
+    },
+    {
+        id:2,
+        type: "Standard Packages",
+        desc: "1",
+    },
+]
+
+export const TrainingsList = [
+    {
+        id: 1,
+        title: "Switchgear Assembly Training",
+        image: "/assets/switchgear.jpg",
+        desc: "Learn the assembly, installation, and maintenance of LV and HV switchgear, including circuit breakers, relays, and control panels.",
+        duration: "4 Weeks",
+        field: "Electrical Engineering"
+    },
+    {
+        id: 2,
+        title: "AutoCAD Training",
+        image: "/assets/autocad.jpg",
+        desc: "Gain expertise in AutoCAD for creating electrical schematics, technical drawings, and 3D modeling for engineering projects.",
+        duration: "6 Weeks",
+        field: "Engineering Design"
+    },
+    {
+        id: 3,
+        title: "Automation Training",
+        image: "/assets/automation-1.jpg",
+        desc: "Develop skills in industrial automation, including PLC programming, SCADA systems, and smart control technologies.",
+        duration: "5 Weeks",
+        field: "Industrial Automation"
+    },
+    {
+        id: 4,
+        title: "Testing and Commissioning Training",
+        image: "/assets/electrical.jpg",
+        desc: "Master the procedures for testing, commissioning, and troubleshooting electrical systems to ensure safety and compliance.",
+        duration: "4 Weeks",
+        field: "Electrical Testing & Safety"
+    },
+    {
+        id: 5,
+        title: "Security Systems Training",
+        image: "/assets/security.jpg",
+        desc: "Learn to install, configure, and maintain security systems such as CCTV, access control, and surveillance solutions.",
+        duration: "3 Weeks",
+        field: "Security & Surveillance"
     }
 ];

@@ -1,0 +1,454 @@
+.installation-container {
+    width: 100%;
+    padding: 2% 2%;
+}
+
+.installation-wrapper {
+    width: 100%;
+}
+
+    /*--------------------- installation top -------------------------*/
+.installations-top {
+    width: 100%;
+    padding: 2% 5%;
+    color: white;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, rgb(2, 98, 98),60%, rgba(13, 128, 163, 0.492)), url('../../../public/assets/back-1.jpg');
+}
+
+.installations-top h1 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.installations-top h1::before {
+    content: ""; 
+    margin-right: 10px;
+    font-size: 16px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    display: inline-block;
+}
+
+.installation-top-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.installation-top-left {
+    flex-basis: 45%;
+    padding-left: 5%;
+}
+
+.installation-top-left h2 {
+    font-weight: 600;
+    font-size: 30px;
+    position: relative;
+}
+
+.installation-top-left h2:last-child {
+    display: none;
+}
+
+.installation-top-left h2::after {
+    background: white;
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    height: 8px;
+    width: 80px;
+}
+
+.installation-top-right {
+    flex-basis: 53%;
+}
+
+
+    /*--------------------- service slogan -------------------------*/
+.service-slogan-section {
+    padding: 5% 5%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-slogan-left {
+    flex-basis: 25%;
+    text-align: right;
+}
+
+.service-slogan-left p:nth-child(1) {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 45px;
+}
+
+.service-slogan-left p:nth-child(2) {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--red-color);
+    line-height: 40px;
+}
+
+.service-slogan-right {
+    flex-basis: 68%;
+}
+
+
+    /*--------------------- installations details -------------------------*/
+.instalation-details {
+    width: 100%;
+    background: rgb(157, 157, 157);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 4% 2%;
+    margin-top: 5%;
+}
+
+.installlation-details-item {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.installlation-details-item h2 {
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.installlation-details-item p {
+    font-size: 18px;
+}
+
+
+    /*--------------------- installations services -------------------------*/
+.installation_services_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 1%;
+}
+
+.installation_services_top h2 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.installation_services_top h2 span {
+    font-size: 20px;
+}
+
+.services-sorts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-sorts-format {
+    border: 1px solid gray;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.service-sorts-format p {
+    font-weight: bold;
+    color: blue;
+}
+
+.installations-services {
+    padding: 5% 0 3%;
+}
+
+.installation-services_filters h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+
+        /*--------------------- installation-services-wrapper -------------------------*/
+.installation-services-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3%;
+}
+
+.installation-services_filters {
+    flex-basis: 23%;
+}
+
+.installation-services_filters p {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.installation-services-search {
+    border: 2px solid red;
+    padding: 3px 3px 3px 7px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--main-color);
+}
+
+.installation-services-search input {
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.installation-seachIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+    color: var(--main-color);
+}
+
+.services-accordion {
+    padding-top: 20px;
+    border-top: 1px solid gray;
+    margin-top: 30px;
+}
+
+.service-accordion_item {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+.accordion-header p {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.accordion-wrapper {
+    margin-left: 5px;
+}
+
+.accordion-wrapper-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 3px;
+}
+
+.installations-services-container {
+    flex-basis: 75%;
+    display: flex;
+    align-items: flex-start;
+    gap: 3.5%;
+    flex-wrap: wrap;
+}
+
+.installations-services-item {
+    flex-basis: 31%;
+    max-width: 360px;
+    padding-bottom: 40px;
+}
+
+.installations-service-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: gray;
+}
+
+.installations-service-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.installation-service-desc {
+    padding-top: 25px;
+}
+
+.installation-service-desc h2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: blue;
+    cursor: pointer;
+}
+
+
+
+    /*-------------------------- not seen in large screen -------------------------------*/
+.filters_small_screen {
+    display: none;
+}
+
+
+
+   /*--------------------------- MEDIA QUERYING ---------------------------------*/
+@media screen and (max-width: 1028px) {
+    
+}
+
+
+
+@media screen and (max-width: 730px) {
+    .installation-container {
+        padding-top: 5%;
+    }
+
+    .installations-top {
+        padding: 25px 3% 20px; 
+        background-image: linear-gradient(90deg, #026262db,100%, #0d80a37d), url('../../../public/assets/back-1.jpg');
+    }
+
+    .installation-top-wrapper {
+        flex-direction: column;
+    }
+
+    .installations-top h1 {
+        display: none;
+    }
+
+    .installation-top-left {
+        padding: 0;
+        width: 100%;
+    }
+
+    .installation-top-left h2:first-child {
+        display: none;
+    }
+
+    .installation-top-left h2:last-child {
+        display: block;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .installation-top-left h2::after {
+        display: none;
+    }
+
+    .installation-top-right {
+        padding-top: 30px;
+    }
+
+    .installation-top-right p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        line-clamp: 7;
+        -webkit-box-orient: vertical;
+    }
+
+    
+        /*--------------------- installations details -------------------------*/
+    .installlation-details-item h2 {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .installlation-details-item p {
+        font-size: 13px;
+    }
+
+
+
+        /*--------------------- small screen filters -------------------------*/
+    .filters_small_screen {
+        display: block;
+        border: 1px solid gray;
+        padding: 5px 8px;
+    }
+
+    .small_accordion_filter p {
+        font-size: 19px;
+    }
+
+    .small-accordion-search {
+        margin-bottom: 15px;
+    }
+
+    .small-accordion_item {
+        padding-bottom: 20px;
+    }
+
+    .small-accordion_item h3 {
+        font-size: 19px;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .accordion-wrapper-item {
+        padding-left: 15px;
+    }
+
+
+
+        /*--------------------- installations services -------------------------*/
+    .installation_services_top {
+        padding: 10px 0 15px;
+        border: none;
+    }
+
+    .services-sorts {
+        gap: 15px;
+    }
+
+    .service-sorts-format {
+        padding: 7px 10px;
+    }
+    
+    .service-sorts-format p {
+        display: none;
+    }
+
+    .installation-services-wrapper {
+        padding-top: 20px;
+        flex-direction: column;
+    }
+
+    .installation-services_filters {
+        display: none;
+    }
+
+    .installations-services-container {
+        padding-top: 25px;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .installations-services-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .installation-service-desc {
+        padding-top: 15px;
+    }
+}

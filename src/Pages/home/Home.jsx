@@ -27,7 +27,7 @@ const Home = () => {
               navigation={false}
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper1"
-            >
+          >
               <SwiperSlide>
                 <div className="homeSwiper-container">
                   <img src="/assets/back-1.jpg" className='swiper-background' alt="PCB" />
@@ -37,7 +37,9 @@ const Home = () => {
                     <p className="swiper-text-large">We offer expert electrical installations, high-voltage works, testing, commissioning and maintenance & repair services, ensuring reliable and efficient power solutions for residential, commercial, and industrial needs</p>
                     <p className="swiper-text-small">We provide expert electrical installations, high-voltage works, testing, commissioning, and maintenance to ensure reliable power solutions for all sectors</p>                    
                     <div className="swiper-button">
-                      <button>Explore Services..</button>
+                      <Link to='/services' className='link-main'>
+                        <button>Explore Services..</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -51,7 +53,9 @@ const Home = () => {
                     <p className="swiper-text-large">We provide a range of Electrical products, including transformers, switchgear, circuit breakers, transmission cables, and surge arresters, designed for efficient power distribution and system protection</p>
                     <p className="swiper-text-small">We offer Electrical products, including transformers, switchgear, circuit breakers, cables, and surge arresters for efficient power distribution and system protection.</p>                  
                     <div className="swiper-button">
-                      <button>Explore Products..</button>
+                      <Link to='/products' className='link-main'>
+                        <button>Explore Products..</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -65,7 +69,9 @@ const Home = () => {
                     <p className="swiper-text-large">We provide engineering technical training, equipping professionals with practical skills in electrical installations, high-voltage systems, testing, commissioning, and maintenance.</p>
                     <p className="swiper-text-small">We provide engineering technical training, equipping professionals with practical skills in electrical installations, high-voltage systems, testing, commissioning, and maintenance.</p> 
                     <div className="swiper-button">
-                      <button>Explore Trainings..</button>
+                      <Link to='/trainings' className='link-main'>
+                        <button>Explore Trainings..</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -90,7 +96,7 @@ const Home = () => {
               </div>
             </div>
             <div className="service_exploreButton">
-              <Link to="/products" className="link-main">
+              <Link to="/services" className="link-main">
                 <button>Explore</button>
               </Link>
             </div>
@@ -111,7 +117,7 @@ const Home = () => {
               </div>
             </div>
             <div className="service_exploreButton">
-              <Link to="/services-and-installations" className="link-main">
+              <Link to="/products" className="link-main">
                 <button>Explore</button>
               </Link>
             </div>
@@ -121,10 +127,10 @@ const Home = () => {
             <div className="companyService_desc">
               <div className="companyService-text">
                 <ul>
-                  <li>Electrical Installations</li>
-                  <li>High Voltage Systems</li>
-                  <li>Testing & Commisioning</li>
-                  <li>Maintanance & Repair</li>
+                  <li>AutoCAD Training</li>
+                  <li>Automation Training</li>
+                  <li>Security Systems Training</li>
+                  <li>Switchgear Assembly Training</li>
                 </ul>
               </div>
               <div className="companyService_image">
@@ -132,7 +138,7 @@ const Home = () => {
               </div>
             </div>
             <div className="service_exploreButton">
-              <Link to="/recycling" className="link-main">
+              <Link to="/trainings" className="link-main">
                 <button>Explore</button>
               </Link>
             </div>

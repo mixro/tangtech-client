@@ -1,0 +1,60 @@
+.registerNow {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid gray;
+}
+
+.registerNow p {
+    text-align: center;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.loginButton button {
+    padding: 4px;
+    border: 3px solid var(--darkblue-color);
+}
+
+.registerNow button {
+    width: 100%;
+    padding: 4px;
+    border-radius: 50px;
+    background: white;
+    color: var(--darkblue-color);
+    border: 3px solid var(--darkblue-color);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.registerNow button:hover {
+    background: var(--minor-color);
+    color: black;
+}
+
+
+
+    /*------------------------- MEDIA QUERYING --------------------------------*/
+
+@media screen and (max-width: 730px) {
+    .loginButton button {
+        border: 3px solid var(--button-color);
+    }
+
+    .registerNow {
+        padding-top: 35px;
+        margin-top: 40px;
+        border-top: 1px solid gray;
+    }
+
+    .registerNow p {
+        color: white;
+        margin-bottom: 15px;
+    }
+
+    .registerNow button {
+        padding: 6px;
+        background: transparent;
+        color: white;
+        border: 3px solid var(--button-color);
+    }
+}

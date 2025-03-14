@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="footerTop_Links">
               {servicesLinks.map((link) => (
                 <div className="footerLinks_div" key={link.id}>
-                  <Link to="" className="link-main">
+                  <Link to="/services" className="link-main">
                     <p>{link.name}</p>
                   </Link>
                 </div>
@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="footerTop_Links">
               {productsLinks.map((link) => (
                 <div className="footerLinks_div" key={link.id}>
-                  <Link to="" className="link-main">
+                  <Link to="/products" className="link-main">
                     <p>{link.name}</p>
                   </Link>
                 </div>
@@ -49,8 +49,8 @@ const Footer = () => {
               </div>
               <div className="footerLinks-icon">
                 <Email />
-                <a href='mailto:tangtech@engineering.com' className='link-main'>
-                  <p>tangtech@engineering.com</p>  
+                <a href='mailto:info@tangtech.com' className='link-main'>
+                  <p>info@tangtech.com</p>  
                 </a>
               </div>
             </div>

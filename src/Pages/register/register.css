@@ -1,0 +1,172 @@
+.registerContainer {
+    background: linear-gradient(60deg, #022442, #016286);
+    padding: 2% 3%;
+    min-height: 100vh;
+}
+
+
+    /*-------------------- register top ----------------------*/
+.registerTop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerTop-image {
+    width: 10%;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerTop-image img {
+    width: 100%;
+    max-width: 200px;
+}
+
+
+    /*-------------------- register top ----------------------*/
+.registerBody {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.registerBody-container {
+    width: 28%;
+    min-width: 350px;
+    background: white;
+    border-radius: 5px;
+    padding: 2% 2.5%;
+}
+
+.registerBody-container h2 {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 3.5%;
+    font-weight: normal;
+}
+
+.registerBody_item {
+    padding-bottom: 15px;
+}
+
+.registerBody_item h3 {
+    font-weight: normal;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.registerBody_item input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid rgb(65, 64, 64);
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.registerButton button {
+    width: 100%;
+    background: var(--darkblue-color);
+    border-radius: 50px;
+    color: white;
+    padding: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.registerText span {
+    font-weight: bold;
+}
+
+
+
+    /*------------------------- MEDIA QUERYING --------------------------------*/
+
+@media screen and (max-width: 730px) {
+    .registerContainer {
+        padding: 10% 3%;
+        background: linear-gradient(#026b8e, #0a3a4b);
+    }
+
+    .registerTop-image {
+        width: 20%;
+        min-width: 110px;
+    }
+
+    .registerBody {
+        padding-top: 10%;
+    }
+
+    .registerBody-container {
+        background: transparent;
+        width: 98%;
+        min-width: 280px;
+    }
+
+    .registerBody-container h2 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 27px;
+    }
+
+    .registerItems {
+        padding-top: 5%;
+    }
+
+    .registerBody_item {
+        padding-bottom: 25px;
+    }
+
+    .registerBody_item h3 {
+        color: white;
+        font-size: 17px;
+    }
+
+    .registerBody_item input {
+        font-size: 16px;
+        padding: 6px 7px;
+        margin-top: 5px;
+    }
+
+    .registerButton button {
+        background: var(--button-color);
+        padding: 10px;
+        font-weight: 500;
+
+            /* highlighting */
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .registerText {
+        color: white;
+        padding-top: 7px;
+    }
+
+    .registerText p span {
+        color: rgb(255, 255, 255);
+    }
+}

@@ -26,7 +26,9 @@ const Details = () => {
                             <div className="details-service-text">
                                 <h3>{service.title}</h3>
                                 <p>{service.desc}</p>
-                                <button>View..</button>
+                                <Link to='/services' className='link-main'>
+                                    <button>View..</button>
+                                </Link>
 
                                 <div className="details-service-icon">
                                     {service.icon}
@@ -99,7 +101,9 @@ const Details = () => {
                         <p>Driven by innovation and excellence, our vision is to be a leading force in electrical and ICT solutions, delivering sustainable and cutting-edge technology. <br /> <br />Our mission is to empower businesses and communities with superior services, advanced solutions, and a commitment to continuous growth and efficiency.</p>
                     </div>
                     <div className="ourBusiness_button">
-                        <button>Read more</button>
+                        <Link to='/about-us' className='link-main'>
+                            <button>Read more</button>
+                        </Link>
                     </div>
                 </div>
 

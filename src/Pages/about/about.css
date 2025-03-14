@@ -97,7 +97,7 @@
 /*--------------MEDIA QUERY AND SCREEN--------------*/
 @media screen and (max-width: 770px) {
     .about-wrapper {
-        padding: 30px 4%; 
+        padding: 50px 4% 30px; 
     }
 
     .about-top p {

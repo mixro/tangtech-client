@@ -1,6 +1,8 @@
 :root {
     --main-color: #ffffff;
     --whiter-color: #fbfbfb;
+    --white-color: #ffffff;
+    --lighter-color: #F3F2F0;
     --primary-color: #48B6B4;
     --secondary-color: #2A8A89;
     --minor-color: #2CF8EF;
@@ -10,20 +12,29 @@
     --orange-color: #ff5e00;
     --dark-blue: #1C3D5A;
     --gray-color: #c3c3c3;
-    --black-color: black;
+    --black-color: #000000;
+    --green-color: #008000;
+    --greenish-color: #00AA00;
+    --blueish-color: #094bff;
+    --blue-color: #0000ff;
 
+    --darkblue-color: #1D2756;
     --transparent-orange: #ff5e0090;
 
     --swiper-background: #04605ea9;
-    --swiper-background-1: #1c3d5aa2;
-    --swiper-background-red: #3e3e3e8d;
+    --swiper-background-1: #1c3d5abc;
+    --swiper-background-red: #2f2e2eb6;
 
     --box-shadow: 0.5px 0.5px 5px 0px rgba(0,0,0,0.5);
 }
 
 .layout-component {
     width: 100vw;
-    background: var(--whiter-color);
+    min-height: 100vh;
+    background: #b6b6b6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .layoutContainer {

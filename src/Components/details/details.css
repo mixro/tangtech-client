@@ -3,10 +3,23 @@
 }
 
 .details_header h2 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 25px;
+    position: relative;
 }
+
+.details_header h2::after {
+    content: '';
+    width: 120px;
+    height: 3.5px;
+    border-radius: 50px;
+    background: var(--charcoal-black);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
 
 
     /*--------------------- details-service ----------------------*/
@@ -91,8 +104,21 @@
 }
 
 .featured_Products h2 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-weight: 500;
+    position: relative;
+    font-size: 25px;
+}
+
+.featured_Products h2::after {
+    content: '';
+    width: 180px;
+    height: 3.5px;
+    border-radius: 50px;
+    background: var(--charcoal-black);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
 }
 
 .slider-container {
@@ -344,7 +370,7 @@
     }
 
     .featured_Products h2 {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         font-size: 22px;
     }
 
@@ -364,7 +390,7 @@
     }
 
     .ourBusiness_button button {
-        padding: 3px 20px;
+        padding: 5px 20px;
         font-size: 15px;
     }
 

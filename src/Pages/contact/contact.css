@@ -140,7 +140,7 @@
 /*--------------MEDIA QUERY AND SCREEN--------------*/
 @media screen and (max-width: 770px) {
     .contact-wrapper {
-        padding: 30px 4%;
+        padding: 50px 4% 30px;
     }
 
     .contact-top {
@@ -177,6 +177,12 @@
     .contact-input-flex {
         flex-direction: column;
         gap: 15px;
+        width: 100%;
+    }
+
+    .contact-input-flex input {
+        flex-basis: 100%;
+        width: 100%;
     }
 
     .contact-map {

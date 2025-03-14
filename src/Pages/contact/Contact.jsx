@@ -1,7 +1,32 @@
 import { Call, LocationOn, Mail } from '@mui/icons-material'
 import './contact.css'
+import { useState } from 'react'
+import { publicRequest } from '../../requestMethod';
 
 const Contact = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const name = firstName + " " + lastName;
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await publicRequest.post("/messages", {name, email, phoneNumber, message});
+      console.log(res);
+      setSuccess(true);
+      console.log(success);
+    } catch (err) {
+      setError(true);
+      console.log(error);
+    }
+  }
+
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
@@ -39,31 +64,31 @@ const Contact = () => {
               <div className="contact-message-item">
                 <p>Name</p>
                 <div className="contact-input-flex">
-                  <input type="text" placeholder='First' />
-                  <input type="text" placeholder='Last' />
+                  <input type="text" placeholder='First' onChange={(e) => setFirstName(e.target.value)} />
+                  <input type="text" placeholder='Last' onChange={(e) => setLastName(e.target.value)} />
                 </div>
               </div>
               <div className="contact-message-item">
                 <p>Email</p>
                 <div className="contact-input">
-                  <input type="text" placeholder='eg. example@gmail.com' />
+                  <input type="text" placeholder='eg. example@gmail.com' onChange={(e) => setEmail(e.target.value)} />
                 </div>
               </div>
               <div className="contact-message-item">
                 <p>Phone (optional)</p>
                 <div className="contact-input">
-                  <input type="text" placeholder='xxx xxx xxxx' />
+                  <input type="text" placeholder='xxx xxx xxxx' onChange={(e) => setPhoneNumber(e.target.value)} />
                 </div>
               </div>
               <div className="contact-message-item">
                 <p>Message</p>
                 <div className="contact-input">
-                  <textarea placeholder='Type your message here...' />
+                  <textarea placeholder='Type your message here...' onChange={(e) => setMessage(e.target.value)} />
                 </div>
               </div>
             </div>
 
-            <button className="contact-button">Send Message</button>
+            <button onClick={handleClick} className="contact-button">Send Message</button>
           </div>
         </div>
 

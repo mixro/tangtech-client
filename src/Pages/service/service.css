@@ -1,0 +1,176 @@
+.service-container {
+    width: 100%;
+    padding: 3% 2% 5%;
+}
+
+.service-wrapper h1 {
+    font-weight: 500;
+    color: blue;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+    /*------------------ service top left -------------------*/
+.service-left {
+    flex-basis: 68%;
+}
+
+.service-left-top h2 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.service-left-top h2::after {
+    content: "";
+    position: absolute;
+    width: 7%;
+    height: 4px;
+    left: 0;
+    bottom: -20px;
+    background: var(--blue-color);
+}
+
+.service-left-buttons {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+}
+
+.service-left-button {
+    width: 45%;
+}
+
+.service-left-button button {
+    padding: 15px 30px;
+    color: white;
+    width: 100%;
+    font-weight: 500;
+    background: var(--green-color);
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-2 button {
+    background: var(--blue-color);
+}
+
+.service-left-bottom p {
+    color: var(--blue-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+
+    /*------------------ service top right -------------------*/
+.service-right {
+    flex-basis: 28%;
+}
+
+.service-right-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    background: var(--gray-color);
+}
+
+.service-right-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+
+    /*----------------- Not seen in large screen ----------------*/
+.service-right h2 {
+    display: none;
+}
+
+
+
+   /*--------------------------- MEDIA QUERYING ---------------------------------*/
+@media screen and (max-width: 1028px) {
+    .service-top {
+        flex-direction: column;
+    }
+
+    .service-left {
+        width: 100%;
+    }
+
+    .service-right {
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 730px) {
+    .service-container {
+        padding: 30px 2.4%;
+    }
+
+    .service-wrapper h1 {
+        font-size: 18px;
+        display: none;
+    }
+
+    .service-top {
+        flex-direction: column-reverse;
+    }
+
+    .service-left-top h2 {
+        display: none;
+    }
+
+    .service-left-top p {
+        margin-top: 20px;
+        text-align: justify;
+        line-height: 24px;
+    }
+
+    .service-left-buttons {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .service-left-button {
+        width: 100%;
+    }
+
+    .service-left-buttons button {
+        width: 100%;
+        border-radius: 50px;
+        padding: 12px 30px;
+    }
+
+    .service-right h2 {
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 30px;
+        margin: 5px 0 30px;
+        display: block;
+        position: relative;
+    }
+
+    .service-right-image img {
+        border-radius: 5px;
+    }
+}

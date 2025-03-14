@@ -1,0 +1,243 @@
+.trainings-comp {
+    padding: 0 0 4% 0;
+}
+
+
+    /*-------------------- training top -----------------------*/
+.trainings-top {
+    display: flex;
+    justify-content: space-between;
+    background: var(--lighter-color);
+}
+
+.trainings-left {
+    flex-basis: 55%;
+    padding: 50px 4%;
+}
+
+.trainings-left h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.trainings-left h2:nth-child(2) {
+    display: none;
+}
+
+.trainings-left p {
+    font-size: 20px;
+}
+
+.trainings-left p span {
+    font-weight: 600;
+}
+
+.training-left-buttons {
+    margin-top: 50px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.training-button-1, .training-button-2 {
+    min-width: 30%;
+}
+
+.training-left-buttons button {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background: var(--blue-color);
+    color: var(--main-color);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 17px;
+    border: 2px solid var(--blue-color);
+    white-space: nowrap;
+}
+
+.training-left-buttons button:hover {
+    background: #002f85;
+    border: 2px solid #002f85;
+}
+
+.training-button-2  button {
+    background: transparent;
+    color: var(--blue-color);
+    border: 2px solid var(--blue-color);
+}
+
+.training-button-2 button:hover {
+    background: var(--blue-color);
+    color: var(--main-color);
+}
+
+.trainings-right {
+    flex-basis: 45%;
+    border-radius: 250px 0 0 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../../public/assets/back-2.jpg');
+}
+
+
+
+    /*-------------------- training wrapper -----------------------*/
+.trainings-wrapper {
+    padding: 4% 2%;
+}    
+
+.trainings-wrapper h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.trainings-wrapper h2::after {
+    content: '';
+    width: 180px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    border-radius: 50px;
+}
+
+.trainings-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.training-item {
+    flex-basis: 30%;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.training-image {
+    width: 100%;
+}
+
+.training-image img {
+    width: 100%;
+    aspect-ratio: 1/0.45;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.training-desc {
+    padding: 10px 10px 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.training-desc h3 {
+    margin-bottom: 10px;
+}
+
+.training-desc-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.training-desc-item p:nth-child(2) {
+    color: var(--blueish-color);
+    font-weight: bold;
+}
+
+
+
+
+    /*--------------MEDIA QUERY AND SCREEN--------------*/
+@media screen and (max-width: 770px) {
+    .trainings-top {
+        flex-direction: column;
+    }
+
+    .trainings-left h2 {
+        font-size: 35px;
+    }
+
+    .trainings-left h2:nth-child(1) {
+        display: none;
+    }
+
+    .trainings-left h2:nth-child(2) {
+        display: block;
+    }
+
+    .trainings-left p {
+        font-size: 18px;
+    }
+    
+    .training-left-buttons {
+        flex-direction: column;
+    }
+
+    .training-left-buttons button {
+        min-width: none;
+        font-size: 16px;
+        padding: 6px 20px;
+        border: 2px solid var(--blueish-color);
+    }
+
+    .training-button-1, .training-button-2 {
+        width: 100%;
+    }
+
+    .training-button-1 button {
+        background: var(--blueish-color);
+    }   
+    
+    .training-button-2 button {
+        color: var(--blueish-color);
+    }
+
+    .training-button-2 button:hover {
+        background: var(--blueish-color);
+        color: var(--main-color);
+        border: 2px solid var(--blueish-color);
+    }
+
+    .trainings-wrapper {
+        padding: 35px 4%;
+    }
+
+    .trainings-wrapper h2 {
+        font-size: 25px;
+        margin-bottom: 80px;
+    }
+
+    .trainings-wrapper h2::after {
+        bottom: -18px;
+        height: 4px;
+        width: 125px;
+    }
+
+    .trainings-container {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .training-item {
+        margin-bottom: 0;
+    }
+
+    .training-desc-item {
+        gap: 18px;
+    }
+}
