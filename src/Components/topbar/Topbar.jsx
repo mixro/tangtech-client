@@ -143,7 +143,7 @@ const Topbar = () => {
               </div>
               <div className="topbar-links">
                 {NavsLink.slice(0, 8).map((link) => (
-                  <Link to={`${link.path}`} className='link-main'>
+                  <Link to={`${link.path}`} className='link-main'key={link.id}>
                     <p className='underline-effect'>{link.title}</p>
                   </Link>
                 ))}

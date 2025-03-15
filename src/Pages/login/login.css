@@ -27,8 +27,8 @@
 }
 
 .registerNow button:hover {
-    background: var(--minor-color);
-    color: black;
+    background: var(--darkblue-color);
+    color: white;
 }
 
 
@@ -56,5 +56,10 @@
         background: transparent;
         color: white;
         border: 3px solid var(--button-color);
+    }
+
+    .registerNow button:hover {
+        background: var(--button-color);
+        color: black;
     }
 }

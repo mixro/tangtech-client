@@ -72,8 +72,8 @@ const Details = () => {
                         className="mySwiper"
                     >
                         {swiperProducts.map((product) => (
-                            <SwiperSlide>
-                                <div className="slider-container" key={product.id}>
+                            <SwiperSlide key={product.id}>
+                                <div className="slider-container">
                                     <Link to='/products' className='link-main'>
                                         <div className="slider-name">
                                             <p>{product.name}</p>

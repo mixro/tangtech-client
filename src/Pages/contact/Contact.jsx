@@ -2,6 +2,7 @@ import { Call, LocationOn, Mail } from '@mui/icons-material'
 import './contact.css'
 import { useState } from 'react'
 import { publicRequest } from '../../requestMethod';
+import { CircularProgress } from '@mui/material';
 
 const Contact = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,19 +12,22 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const name = firstName + " " + lastName;
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setButtonClicked(true);
+
     try {
       const res = await publicRequest.post("/messages", {name, email, phoneNumber, message});
       console.log(res);
       setSuccess(true);
-      console.log(success);
+      setError(false);
     } catch (err) {
       setError(true);
-      console.log(error);
+      setSuccess(false);
     }
   }
 
@@ -88,7 +92,14 @@ const Contact = () => {
               </div>
             </div>
 
-            <button onClick={handleClick} className="contact-button">Send Message</button>
+            <div onClick={handleClick} className='messageButton'>
+              {buttonClicked && !success && !error ? <CircularProgress sx={{color: 'white'}} size={30} /> : <p>SEND MESSAGE</p>}
+            </div>
+
+            <div className="message-response">
+              {buttonClicked && success && <p className='message-sent'>Message sent</p>}
+              {buttonClicked && error && <p className='message-notSent'>Message not sent, Send again!</p>}
+            </div>
           </div>
         </div>
 

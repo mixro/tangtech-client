@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { SignIn } from '../../redux/apiCalls';
+import { CircularProgress } from '@mui/material';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -52,8 +53,10 @@ const Login = () => {
             </div>
           </div>
           <div className="registerButton loginButton">
-            <button onClick={handleClick}>{logginButtonClicked ? (isFetching && logginButtonClicked ? "Loading.." : "LOGIN") : "LOGIN"}</button>
-            {logginButtonClicked && error && // Display error only after button click
+            <div onClick={handleClick} className='register-button'>
+              {logginButtonClicked && isFetching ? <CircularProgress size={30} /> : <p>LOGIN</p>}
+            </div>
+            {logginButtonClicked && error && !isFetching && // Display error only after button click
               <div className="error">
                 <p>Wrong credentials!!, Try again !!</p>
               </div>
@@ -65,6 +68,12 @@ const Login = () => {
             <Link to="/register" className='link-main'>
               <button>Register Now</button>
             </Link>
+          </div>
+        </div>
+        <div className="registerImage">
+          <img src='/assets/electrical.jpg' alt='TANG TECH LOGO' />
+          <div className="register-logoImg">
+            <img src="/assets/tangtech-logo.png" alt="LOGO" />
           </div>
         </div>
       </div>

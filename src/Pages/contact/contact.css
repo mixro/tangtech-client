@@ -103,10 +103,10 @@
     font-size: 16px;
 }
 
-.contact-button {
+.messageButton {
     background: var(--dark-blue);
     color: var(--main-color);
-    padding: 8px 25px;
+    padding: 6px 25px;
     border: none;
     outline: none;
     border-radius: 50px;
@@ -114,7 +114,31 @@
     cursor: pointer;
     font-weight: 600;
     margin-top: 20px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.messageButton p {
+    margin: 2.5px 0;
+}
+
+.message-response {
+    padding-top: 8px;
+}
+
+.message-sent {
+    color: rgb(2, 104, 2);
+    font-weight: 600;
+} 
+
+.message-notSent {
+    font-weight: 600;
+    color: red;
+}
+
+
 
 
     /*---------- contact bottom ---------------*/
