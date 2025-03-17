@@ -4,6 +4,8 @@ import { Email, Facebook, Instagram, LinkedIn, Phone, WhatsApp, X} from "@mui/ic
 import { productsLinks, servicesLinks } from "../../staticData"
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className="footer_container">
       <div className="footer_top">
@@ -80,7 +82,7 @@ const Footer = () => {
       </div>
 
       <div className="footer_bottom">
-        <p>Tang Tech & Engineering Ltd <br/> <span>Copyright ©2025</span>.</p>
+        <p>Tang Tech & Engineering Ltd <br/> <span>Copyright ©{year}</span>.</p>
       </div>
     </div>
   )

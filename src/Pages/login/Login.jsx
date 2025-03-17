@@ -56,6 +56,7 @@ const Login = () => {
             <div onClick={handleClick} className='register-button'>
               {logginButtonClicked && isFetching ? <CircularProgress size={30} /> : <p>LOGIN</p>}
             </div>
+            
             {logginButtonClicked && error && !isFetching && // Display error only after button click
               <div className="error">
                 <p>Wrong credentials!!, Try again !!</p>
