@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-container">
-        <h1></h1>
         <div className="home_gallery">
           <Swiper
               spaceBetween={0}
