@@ -218,7 +218,9 @@ const Products = () => {
                             filteredProducts.map((product) => (
                                 <div className="products-item" key={product._id}>
                                     <div className="productsItem-left">
-                                        <h2>{product.title}</h2>
+                                        <Link to={`/product/${product._id}`} className='link-main'>
+                                            <h2>{product.title}</h2>
+                                        </Link>
                                         <div className="productsItem-details">
                                             <p>{product.type}</p>
                                             <p>{product.desc}</p>
@@ -232,7 +234,9 @@ const Products = () => {
                                     </div>
                                     <div className="productsItem-right">
                                         <div className="productsItem-name">
-                                            <h2>{product.title}</h2>
+                                            <Link to={`/product/${product._id}`} className='link-main'>
+                                                <h2>{product.title}</h2>
+                                            </Link>
                                             <p>{product.type}</p>
                                         </div>
                                         <Link to={`/product/${product._id}`} className='link-main productImage'>
