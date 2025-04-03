@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-container">
+        <h1 className='not-seen'>Tang Tech & Engineering Ltd – Delivering cutting-edge electrical, ICT, security, and automation solutions. Trusted for innovation, reliability, and sustainable technology.</h1>
         <div className="home_gallery">
           <Swiper
               spaceBetween={0}

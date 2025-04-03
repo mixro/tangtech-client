@@ -113,6 +113,7 @@ const Register = () => {
             </p>
           </div>
         </div>
+        
         <div className="registerImage">
           <img src='/assets/electrical.jpg' alt='TANG TECH LOGO' />
           <div className="register-logoImg">
