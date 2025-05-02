@@ -6,9 +6,20 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import Details from '../../Components/details/Details';
+import { useDispatch } from 'react-redux';
+import { getProducts, getServices } from '../../redux/apiCalls';
+import { useEffect } from 'react';
 
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      getServices(dispatch);
+      getProducts(dispatch);
+  }, [ dispatch ]);
+
+
   return (
     <div className="home">
       <div className="home-container">
