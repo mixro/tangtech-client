@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://tangtech.netlify.app/*"
+  to = "https://www.tangtecheng.com/:splat"
+  status = 301
+  force = true
