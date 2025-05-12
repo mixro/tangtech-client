@@ -42,22 +42,6 @@ const Home = () => {
           >
               <SwiperSlide>
                 <div className="homeSwiper-container">
-                  <img src="/assets/back-1.jpg" className='swiper-background' alt="PCB" />
-
-                  <div className="swiper-desc">
-                    <h2>Technical Services</h2>
-                    <p className="swiper-text-large">We offer expert electrical installations, high-voltage works, testing, commissioning and maintenance & repair services, ensuring reliable and efficient power solutions for residential, commercial, and industrial needs</p>
-                    <p className="swiper-text-small">We provide expert electrical installations, high-voltage works, testing, commissioning, and maintenance to ensure reliable power solutions for all sectors</p>                    
-                    <div className="swiper-button">
-                      <Link to='/services' className='link-main'>
-                        <button>Explore Services..</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="homeSwiper-container">
                   <img src="/assets/back-3.jpg" className='swiper-background' alt="PCB" />
 
                   <div className="swiper-desc desc-2">
@@ -67,6 +51,22 @@ const Home = () => {
                     <div className="swiper-button">
                       <Link to='/products' className='link-main'>
                         <button>Explore Products..</button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="homeSwiper-container">
+                  <img src="/assets/back-1.jpg" className='swiper-background' alt="PCB" />
+
+                  <div className="swiper-desc">
+                    <h2>Technical Services</h2>
+                    <p className="swiper-text-large">We offer expert electrical installations, high-voltage works, testing, commissioning and maintenance & repair services, ensuring reliable and efficient power solutions for residential, commercial, and industrial needs</p>
+                    <p className="swiper-text-small">We provide expert electrical installations, high-voltage works, testing, commissioning, and maintenance to ensure reliable power solutions for all sectors</p>                    
+                    <div className="swiper-button">
+                      <Link to='/services' className='link-main'>
+                        <button>Explore Services..</button>
                       </Link>
                     </div>
                   </div>

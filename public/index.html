@@ -23,17 +23,35 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Tang Tech & Engineering Ltd",
+        "name": "Tang Tech Engineering", <!-- Removed "Ltd" for cleaner branding -->
+        "legalName": "Tang Tech & Engineering Ltd", <!-- Legal name if required -->
         "url": "https://www.tangtecheng.com/",
-        "logo": "https://www.tangtecheng.com/favicon.ico",
-        "description": "Tang Tech & Engineering Ltd – Delivering cutting-edge electrical, ICT, security, and automation solutions. Trusted for innovation, reliability, and sustainable technology.",
+        "logo": "https://www.tangtecheng.com/favicon.ico", <!-- Use full logo (min 112x112px) -->
+        "description": "Professional electrical installations, high-voltage systems, and maintenance services. Trusted for innovation and reliability in Tanzania.",
+        "foundingDate": "2023", <!-- Add actual year -->
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kinondoni",
+          "addressLocality": "Dar es Salaam",
+          "addressRegion": "Dar es Salaam",
+          "postalCode": "0000",
+          "addressCountry": "TZ"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+255659801321",
-          "contactType": "customer service"
+          "contactType": "customer service",
+          "email": "info@tangtecheng.com",
+          "areaServed": "Tanzania",
+          "availableLanguage": ["English", "Swahili"]
         },
         "sameAs": [
-        ]
+        ],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.tangtecheng.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
       </script>
   </head>

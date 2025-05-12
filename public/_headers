@@ -1,1 +1,7 @@
-tangtech-client/public/_redirects
+/*
+  Link: <https://www.tangtecheng.com/>; rel="canonical"
+  X-Robots-Tag: all
+
+https://www.tangtecheng.com/*
+  Link: <https://www.tangtecheng.com/>; rel="canonical"
+  X-Robots-Tag: alls
