@@ -51,8 +51,8 @@ const Footer = () => {
               </div>
               <div className="footerLinks-icon">
                 <Email />
-                <a href='mailto:info@tangtech.com' className='link-main'>
-                  <p>info@tangtech.com</p>  
+                <a href='mailto:info@tangtecheng.com' className='link-main'>
+                  <p>info@tangtecheng.com</p>  
                 </a>
               </div>
             </div>
