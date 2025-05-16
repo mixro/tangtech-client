@@ -99,7 +99,7 @@ const Topbar = () => {
                     <div className="topbar-top-item">
                         <Email sx={{ fontSize: { xs: 20, sm: 25, md: 25, lg: 25, xl: 25 } }} />
                         <a href='mailto:info@tangtech.com' className='link-main'>
-                          info@tangtech.com
+                          info@tangtecheng.com
                         </a>
                     </div>
                 </div>
