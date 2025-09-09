@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Tang Tech Website – Frontend Documentation  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-v18-blue)
+![Redux](https://img.shields.io/badge/Redux-Toolkit-purple)
+![MaterialUI](https://img.shields.io/badge/Material--UI-Components-blueviolet)
+![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Analytics-orange)
+![CSS](https://img.shields.io/badge/CSS3-Styling-blue)  
 
-## Available Scripts
+The **Tang Tech Website** is a modern platform designed to showcase Tang Tech & Engineering Ltd’s expertise in **electrical services, ICT solutions, automation, and security systems**.  
+It provides customers with seamless access to services, products, and training programs while enabling efficient management through an integrated admin panel.  
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Overview](#overview)  
+- [Architecture](#architecture)  
+- [Technologies](#technologies)  
+- [Setup Instructions](#setup-instructions)  
+- [Directory Structure](#directory-structure)  
+- [Core Features](#core-features)  
+- [Testing](#testing)  
+- [Deployment](#deployment)  
+- [Future Improvements](#future-improvements)  
+- [Support](#support)  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Overview  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tang Tech Website empowers customers and administrators with tools to:  
 
-### `npm run build`
+- Explore detailed **electrical, ICT, security, and automation services**.  
+- Browse and request quotes for **products and equipment**.  
+- Register and enroll in **technical training programs**.  
+- Submit **inquiries** and connect with Tang Tech directly.  
+- Manage services, products, and messages via the **admin panel**.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Architecture  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Components  
 
-### `npm run eject`
+- **React (Frontend)** – Builds user interface and interactive views.  
+- **Redux Toolkit** – Manages global application state (services, products, training, authentication).  
+- **Material UI** – Provides responsive UI components and icons.  
+- **Firebase** – Used for authentication, analytics, and storage integration.  
+- **REST API Integration** – Connects frontend with backend services for data management.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Directory Structure  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```plaintext
+targetech-client/
+├── public/                  # Static assets (favicon, index.html, images)
+├── src/
+│   ├── Components/          # Reusable UI components (Navbar, Footer, Cards)
+│   ├── Pages/               # Main application pages (Home, About, Services, Products, Training)
+│   ├── redux/               # Redux store and slices
+│   ├── App.css              # Global styles
+│   ├── App.js               # Root component and routing
+│   ├── index.css            # Base styling
+│   ├── index.js             # Entry point rendering React App
+│   └── staticData.js        # Static mock data (partners, services, training list)
+├── package.json             # Dependencies and scripts
+├── README.md                # Documentation
+```  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies  
 
-## Learn More
+- **React** (v18) – Component-based frontend framework  
+- **Redux Toolkit** – State management  
+- **Material UI** – UI library for consistent design  
+- **Firebase** – Authentication & analytics  
+- **Axios** – API requests handling  
+- **CSS3** – Styling  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setup Instructions  
 
-### Code Splitting
+### Prerequisites  
+- **Node.js** v18+  
+- **npm** or **yarn**  
+- Firebase project credentials  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation  
 
-### Analyzing the Bundle Size
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/mixro/targetech-client
+   cd targetech-client
+   ```  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install dependencies:  
+   ```bash
+   npm install
+   ```  
 
-### Making a Progressive Web App
+3. Configure Firebase:  
+   - Create a project in Firebase Console.  
+   - Enable Authentication & Analytics.  
+   - Add your Firebase config in `.env`.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Run the app:  
+   ```bash
+   npm start
+   ```  
+   The app runs at `http://localhost:3000`.  
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Core Features  
 
-### Deployment
+- **Services Overview** – Detailed listing of all Tang Tech services.  
+- **Product Catalog** – Browse and explore electrical and automation products.  
+- **Training Programs** – View and register for professional training courses.  
+- **Customer Inquiries** – Contact forms for support and information.  
+- **Partners Section** – Showcases Tang Tech’s collaborators.  
+- **Authentication** – Register/Login functionality with Firebase.  
+- **Admin Panel** – Manage services, products, and customer interactions.  
+- **Responsive Design** – Optimized for desktop and mobile devices.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Testing  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Static Data** in `staticData.js` is used for UI testing.  
+- Manual testing can be performed with:  
+  ```bash
+  npm test
+  ```  
+
+
+## Deployment  
+
+### Local  
+```bash
+npm run build
+serve -s build
+```  
+
+### Production  
+Deploy to:  
+- **Firebase Hosting**  
+- **Vercel**  
+- **Netlify**  
+
+
+## Future Improvements  
+
+- Integration with backend for live data.  
+- Advanced admin dashboard with analytics.  
+- AI-powered chatbot for inquiries.  
+- Mobile app support for training and services.  
+
+
+## Support  
+
+For issues or inquiries:  
+- Contact Tang Tech support team at [josephchongola43@gmail.com].  
+- Raise issues via the GitHub repository.  
