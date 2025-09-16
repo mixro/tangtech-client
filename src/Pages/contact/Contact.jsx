@@ -48,8 +48,8 @@ const Contact = () => {
               </div>
               <div className="contact-icon">
                 <Mail sx={{ fontSize: { xs: 30, sm: 30} }} />
-                <a href='mailto:tangtech@engineering.com' className='link-main'>
-                  info@tangtech.com
+                <a href='mailto:info@tangtecheng.com' className='link-main'>
+                  info@tangtecheng.com
                 </a>
               </div>
               <div className="contact-icon">
