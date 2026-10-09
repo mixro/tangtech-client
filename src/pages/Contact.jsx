@@ -7,10 +7,12 @@ import { site } from "../data/site";
 import { services } from "../data/services";
 import { trainings } from "../data/organisations";
 
-// Netlify Forms: the prerendered HTML contains this form (data-netlify), so
-// Netlify registers it at deploy time. Submissions appear under Site → Forms
-// and can be emailed to info@tangtecheng.com from the Netlify dashboard.
-const FORM_NAME = "quote-request";
+// Quote requests are emailed straight to info@tangtecheng.com by Web3Forms
+// (https://web3forms.com). Works on any host. The access key is public by
+// design; it only says which inbox receives the email. Set it in
+// src/data/site.js (web3formsKey) or as the VITE_WEB3FORMS_KEY env variable.
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const ACCESS_KEY = import.meta.env?.VITE_WEB3FORMS_KEY || site.web3formsKey;
 
 const topics = [
   ...services.map((s) => ({ value: s.slug, label: s.title })),
@@ -19,12 +21,11 @@ const topics = [
   { value: "other", label: "Something else" },
 ];
 
-const encode = (data) => new URLSearchParams(data).toString();
-
 export default function Contact() {
   const [params] = useSearchParams();
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", topic: "", item: "", message: "" });
   const [state, setState] = useState("idle"); // idle | sending | sent | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   // Prefill from links like /contact-us?item=… or ?service=… (after hydration)
   useEffect(() => {
@@ -40,23 +41,47 @@ export default function Contact() {
 
   const update = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
+  const topicLabel = topics.find((t) => t.value === form.topic)?.label;
+
   async function submit(e) {
     e.preventDefault();
+    // Honeypot: real visitors never see or tick this box
+    if (e.target.elements.botcheck?.checked) return;
+    if (!ACCESS_KEY) {
+      setErrorMsg("The quote form isn't connected to an inbox yet (missing Web3Forms access key).");
+      setState("error");
+      return;
+    }
     setState("sending");
     try {
-      const res = await fetch("/", {
+      const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": FORM_NAME, ...form, "bot-field": e.target.elements["bot-field"].value }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `Quote request: ${topicLabel ?? "General"} | ${form.name}${form.company ? ` (${form.company})` : ""}`,
+          from_name: "Tang Tech website",
+          // Web3Forms uses `email` as the reply-to, so "Reply" goes to the customer
+          email: form.email,
+          Name: form.name,
+          Company: form.company || "-",
+          Phone: form.phone,
+          "Service / topic": topicLabel ?? form.topic,
+          "Equipment or course": form.item || "-",
+          "Project details": form.message,
+          Page: typeof window !== "undefined" ? window.location.href : "",
+        }),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || `HTTP ${res.status}`);
       setState("sent");
-    } catch {
+    } catch (err) {
+      setErrorMsg("");
       setState("error");
+      console.warn("Quote form error:", err);
     }
   }
 
-  const topicLabel = topics.find((t) => t.value === form.topic)?.label;
   const waText = encodeURIComponent(
     `Hello Tang Tech, I'm ${form.name || "…"}${form.company ? ` from ${form.company}` : ""}. ` +
       `${topicLabel ? `Enquiry: ${topicLabel}. ` : ""}${form.item ? `Item: ${form.item}. ` : ""}${form.message}`
@@ -84,11 +109,10 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form name={FORM_NAME} method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={submit} className="quote-form">
-                <input type="hidden" name="form-name" value={FORM_NAME} />
+              <form onSubmit={submit} className="quote-form">
                 <p className="hp" aria-hidden="true">
                   <label>
-                    Leave this empty <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                    Leave this unticked <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
                   </label>
                 </p>
                 <h2>Request a quote</h2>
@@ -148,8 +172,8 @@ export default function Contact() {
                 </label>
                 {state === "error" && (
                   <p className="form-error" role="alert">
-                    Your request couldn't be sent. Check your connection and try again, or send it on WhatsApp or by email
-                    using the options beside this form.
+                    {errorMsg || "Your request couldn't be sent. Check your connection and try again."} You can also send it on
+                    WhatsApp, or email <a href={`mailto:${site.email}`}>{site.email}</a> directly.
                   </p>
                 )}
                 <div className="form-actions">

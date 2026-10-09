@@ -26,7 +26,7 @@ Requires Node 20.19+ (Node 22 recommended).
 | Styling | One CSS file with design tokens (`src/styles/global.css`); no UI framework |
 | Icons | Inline SVG (`src/components/Icon.jsx`) |
 | Images | Responsive `srcset` from the Unsplash CDN (auto WebP/AVIF), lazy-loaded, fixed aspect ratio, branded fallback if an image fails |
-| Forms | Netlify Forms (`quote-request`) + WhatsApp fallback |
+| Forms | Web3Forms emails each quote request straight to info@tangtecheng.com (works on any host), plus a WhatsApp fallback |
 | SEO | Per-page title/description/canonical/Open Graph, JSON-LD `ElectricalContractor`, sitemap, 301s for old URLs |
 
 ## Editing content
@@ -61,11 +61,20 @@ The current photos are placeholders from Unsplash (free under the Unsplash Licen
 
 After the first deploy:
 
-1. **Forms:** open Site → Forms. The `quote-request` form is detected automatically from the prerendered HTML. Under Forms → Notifications, add an email notification to `info@tangtecheng.com`.
-2. **Old URLs:** `public/_redirects` sends `/product/*`, `/service/*`, `/login`, `/register`, `/cart`, `/wishlist`, `/success` and `/customers` to their new pages with 301s.
-3. **Search Console:** submit `https://www.tangtecheng.com/sitemap.xml`.
+1. **Old URLs:** `public/_redirects` sends `/product/*`, `/service/*`, `/login`, `/register`, `/cart`, `/wishlist`, `/success` and `/customers` to their new pages with 301s.
+2. **Search Console:** submit `https://www.tangtecheng.com/sitemap.xml`.
 
-Other hosts work too (Vercel, Cloudflare Pages, any static host). Only the form handler is Netlify-specific: replace the `fetch("/")` in `src/pages/Contact.jsx` with Formspree or Web3Forms if you move.
+Other hosts work too (Cloudflare Pages, Vercel, any static host). Nothing in the site depends on Netlify.
+
+## Quote form → email (Web3Forms)
+
+The contact form posts to `https://api.web3forms.com/submit`, which emails the request to the inbox linked to the access key.
+
+1. At https://web3forms.com, create an access key using **info@tangtecheng.com** and confirm it from your inbox.
+2. Paste the key into `src/data/site.js` → `web3formsKey`. Alternatively, set `VITE_WEB3FORMS_KEY` in your host's environment variables; it overrides the file.
+3. Rebuild and deploy, then send a test request from `/contact-us`.
+
+The key is public by design. It only identifies which inbox receives the email, so it is safe in frontend code. The free plan allows 250 submissions a month. Replying to a notification email replies to the customer.
 
 ## Project structure
 

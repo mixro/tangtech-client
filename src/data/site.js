@@ -7,8 +7,11 @@ export const site = {
   phone: { display: "+255 616 627 609", tel: "+255616627609" },
   phoneAlt: { display: "+255 659 801 321", tel: "+255659801321" },
   // Confirm this number is on WhatsApp before launch.
-  whatsapp: "255627485402",
+  whatsapp: "255616627609",
   email: "info@tangtecheng.com",
+  // Web3Forms access key for the quote form (https://web3forms.com).
+  // Create it with info@tangtecheng.com and paste it here. Safe to be public.
+  web3formsKey: "0166ef1a-774a-4f96-828a-ea70ac8d6c13",
   address: {
     line1: "Tabata Business Centre Building, 1st Floor",
     city: "Dar es Salaam, Tanzania",
