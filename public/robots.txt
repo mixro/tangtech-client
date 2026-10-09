@@ -1,5 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /cart
+Disallow: /wishlist
+Disallow: /success
+Disallow: /login
+Disallow: /register
 
 Sitemap: https://www.tangtecheng.com/sitemap.xml

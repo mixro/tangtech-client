@@ -1,7 +1,7 @@
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 /*
-  Link: <https://www.tangtecheng.com/>; rel="canonical"
-  X-Robots-Tag: all
-
-https://www.tangtecheng.com/*
-  Link: <https://www.tangtecheng.com/>; rel="canonical"
-  X-Robots-Tag: alls
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

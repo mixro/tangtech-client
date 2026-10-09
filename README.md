@@ -1,157 +1,70 @@
-# Tang Tech Website – Frontend Documentation  
+# Tang Tech & Engineering Ltd – Website (client)
 
-![React](https://img.shields.io/badge/React-v18-blue)
-![Redux](https://img.shields.io/badge/Redux-Toolkit-purple)
-![MaterialUI](https://img.shields.io/badge/Material--UI-Components-blueviolet)
-![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Analytics-orange)
-![CSS](https://img.shields.io/badge/CSS3-Styling-blue)  
+Corporate website and online catalogue for **Tang Tech & Engineering Ltd** – electrical, ICT, security and automation
+solutions, electrical products and technical training (Dar es Salaam, Tanzania).
 
-The **Tang Tech Website** is a modern platform designed to showcase Tang Tech & Engineering Ltd’s expertise in **electrical services, ICT solutions, automation, and security systems**.  
-It provides customers with seamless access to services, products, and training programs while enabling efficient management through an integrated admin panel.  
+**Stack:** React 19 · Vite · TypeScript · React Router 7 · Tailwind CSS 4 · lucide-react icons · Inter (variable, Latin subset)
 
+## Getting started
 
-## Table of Contents  
-
-- [Overview](#overview)  
-- [Architecture](#architecture)  
-- [Technologies](#technologies)  
-- [Setup Instructions](#setup-instructions)  
-- [Directory Structure](#directory-structure)  
-- [Core Features](#core-features)  
-- [Testing](#testing)  
-- [Deployment](#deployment)  
-- [Future Improvements](#future-improvements)  
-- [Support](#support)  
-
-
-## Overview  
-
-Tang Tech Website empowers customers and administrators with tools to:  
-
-- Explore detailed **electrical, ICT, security, and automation services**.  
-- Browse and request quotes for **products and equipment**.  
-- Register and enroll in **technical training programs**.  
-- Submit **inquiries** and connect with Tang Tech directly.  
-- Manage services, products, and messages via the **admin panel**.  
-
-
-## Architecture  
-
-### Components  
-
-- **React (Frontend)** – Builds user interface and interactive views.  
-- **Redux Toolkit** – Manages global application state (services, products, training, authentication).  
-- **Material UI** – Provides responsive UI components and icons.  
-- **Firebase** – Used for authentication, analytics, and storage integration.  
-- **REST API Integration** – Connects frontend with backend services for data management.  
-
-### Directory Structure  
-
-```plaintext
-targetech-client/
-├── public/                  # Static assets (favicon, index.html, images)
-├── src/
-│   ├── Components/          # Reusable UI components (Navbar, Footer, Cards)
-│   ├── Pages/               # Main application pages (Home, About, Services, Products, Training)
-│   ├── redux/               # Redux store and slices
-│   ├── App.css              # Global styles
-│   ├── App.js               # Root component and routing
-│   ├── index.css            # Base styling
-│   ├── index.js             # Entry point rendering React App
-│   └── staticData.js        # Static mock data (partners, services, training list)
-├── package.json             # Dependencies and scripts
-├── README.md                # Documentation
-```  
-
-
-## Technologies  
-
-- **React** (v18) – Component-based frontend framework  
-- **Redux Toolkit** – State management  
-- **Material UI** – UI library for consistent design  
-- **Firebase** – Authentication & analytics  
-- **Axios** – API requests handling  
-- **CSS3** – Styling  
-
-
-## Setup Instructions  
-
-### Prerequisites  
-- **Node.js** v18+  
-- **npm** or **yarn**  
-- Firebase project credentials  
-
-### Installation  
-
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/mixro/targetech-client
-   cd targetech-client
-   ```  
-
-2. Install dependencies:  
-   ```bash
-   npm install
-   ```  
-
-3. Configure Firebase:  
-   - Create a project in Firebase Console.  
-   - Enable Authentication & Analytics.  
-   - Add your Firebase config in `.env`.  
-
-4. Run the app:  
-   ```bash
-   npm start
-   ```  
-   The app runs at `http://localhost:3000`.  
-
-
-## Core Features  
-
-- **Services Overview** – Detailed listing of all Tang Tech services.  
-- **Product Catalog** – Browse and explore electrical and automation products.  
-- **Training Programs** – View and register for professional training courses.  
-- **Customer Inquiries** – Contact forms for support and information.  
-- **Partners Section** – Showcases Tang Tech’s collaborators.  
-- **Authentication** – Register/Login functionality with Firebase.  
-- **Admin Panel** – Manage services, products, and customer interactions.  
-- **Responsive Design** – Optimized for desktop and mobile devices.  
-
-
-## Testing  
-
-- **Static Data** in `staticData.js` is used for UI testing.  
-- Manual testing can be performed with:  
-  ```bash
-  npm test
-  ```  
-
-
-## Deployment  
-
-### Local  
 ```bash
-npm run build
-serve -s build
-```  
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # type-check + production build into dist/
+npm run preview    # serve the production build locally
+npm run lint       # type-check only (tsc --noEmit)
+```
 
-### Production  
-Deploy to:  
-- **Firebase Hosting**  
-- **Vercel**  
-- **Netlify**  
+Requires Node 20.19+ (22 recommended).
 
+### Configuration
 
-## Future Improvements  
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `VITE_API_URL` | `https://tangtech-server.onrender.com/api` | Backend REST API base URL |
 
-- Integration with backend for live data.  
-- Advanced admin dashboard with analytics.  
-- AI-powered chatbot for inquiries.  
-- Mobile app support for training and services.  
+Copy `.env.example` to `.env.local` to override.
 
+## Project structure
 
-## Support  
+```
+src/
+  main.tsx            entry: providers, router, idle-time data prefetch
+  App.tsx             route table (every page except Home is lazy-loaded)
+  types.ts            shared API/domain types
+  components/         Layout, Header (responsive nav), Footer, ui primitives, Field, Reveal (scroll animation)
+  pages/              one file per route
+  hooks/              useResource (cached data fetching), usePageMeta (title/description/canonical/OG)
+  lib/                api (fetch client), storage (persistence + legacy migration), format
+  store/              StoreContext – user session, cart, wishlist (useReducer + localStorage)
+  data/content.ts     static business content: services, trainings, partners, customers, team, contact details
+  styles/index.css    Tailwind theme (brand colours sampled from the logo) + motion rules
+public/
+  images/             optimised WebP assets
+  _redirects          SPA fallback (Netlify)
+  _headers            caching + security headers (Netlify)
+```
 
-For issues or inquiries:  
-- Contact Tang Tech support team at [josephchongola43@gmail.com].  
-- Raise issues via the GitHub repository.  
+## Routes
+
+`/` · `/services` · `/service/:id` · `/products` · `/product/:id` · `/trainings` · `/partners` · `/customers` ·
+`/about-us` · `/contact-us` · `/cart` · `/wishlist` · `/success` · `/login` · `/register` · `*` → 404
+
+## How data and state work
+
+- **Content** (company info, training list, partners…) lives in `src/data/content.ts` – edit text there.
+- **Services/products** come from the REST API (`GET /services`, `GET /products`). `useResource` de-duplicates requests,
+  keeps the last good response in memory + `localStorage`, renders it instantly on reload and refreshes it in the background
+  when older than 5 minutes. Pages show skeletons, a "server is waking up" notice on slow responses, and a retry on failure.
+- **Auth/cart/wishlist** are stored in `localStorage` (`tt:state:v1`). A signed-in session and cart from the previous
+  Redux-persist build are migrated automatically on first load.
+- **API contract** (unchanged): `POST /auth/login`, `POST /auth/register`, `POST /messages`, `POST /orders` (sends the
+  `token: Bearer …` header read at request time).
+
+## Deployment
+
+Static SPA – deploy `dist/` to Netlify, Vercel, Firebase Hosting, etc.
+
+- **Netlify:** `netlify.toml` sets the build and Node version; `public/_redirects` provides the SPA fallback so direct
+  URLs and refreshes work; `public/_headers` sets long-lived immutable caching for hashed `/assets/*`.
+- **Other hosts:** configure an SPA fallback (all unknown paths → `/index.html`) and cache `/assets/*` for a year.
