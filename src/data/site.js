@@ -7,7 +7,7 @@ export const site = {
   phone: { display: "+255 616 627 609", tel: "+255616627609" },
   phoneAlt: { display: "+255 659 801 321", tel: "+255659801321" },
   // Confirm this number is on WhatsApp before launch.
-  whatsapp: "255616627609",
+  whatsapp: "255627485402",
   email: "info@tangtecheng.com",
   // Web3Forms access key for the quote form (https://web3forms.com).
   // Create it with info@tangtecheng.com and paste it here. Safe to be public.
