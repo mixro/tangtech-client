@@ -1,12 +1,12 @@
 {
-  "short_name": "Tang Tech",
   "name": "Tang Tech & Engineering Ltd",
-  "icons": [
-    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
-  ],
+  "short_name": "Tang Tech",
   "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#0b1b2b",
-  "background_color": "#ffffff"
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#23292D",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
 }

@@ -1,1 +1,12 @@
-/*    /index.html   200
+# Old backend-era URLs → new pages (permanent, keeps search ranking)
+/product/*      /products     301
+/service/*      /services     301
+/customers      /partners#clients 301
+/login          /             301
+/register       /             301
+/cart           /contact-us   301
+/wishlist       /products     301
+/success        /             301
+
+# Every page is prerendered to its own HTML file. Unknown URLs get 404.html
+# automatically from Netlify, so no SPA catch-all is needed.

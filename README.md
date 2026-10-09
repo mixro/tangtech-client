@@ -1,70 +1,85 @@
-# Tang Tech & Engineering Ltd – Website (client)
+# Tang Tech & Engineering — website
 
-Corporate website and online catalogue for **Tang Tech & Engineering Ltd** – electrical, ICT, security and automation
-solutions, electrical products and technical training (Dar es Salaam, Tanzania).
+Static company website for **Tang Tech & Engineering Ltd**: a Class V electrical works contractor in Dar es Salaam (MV/HV lines, substations, switchgear, testing, automation, ICT).
 
-**Stack:** React 19 · Vite · TypeScript · React Router 7 · Tailwind CSS 4 · lucide-react icons · Inter (variable, Latin subset)
+It is built with **React 19 + Vite**, has **no backend**, and every page is **prerendered to static HTML** at build time. That gives fast first paint and full indexing by search engines.
 
-## Getting started
+## Quick start
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # type-check + production build into dist/
-npm run preview    # serve the production build locally
-npm run lint       # type-check only (tsc --noEmit)
+npm run build      # production build + prerender → dist/
+npm run preview    # serve dist/ locally
 ```
 
-Requires Node 20.19+ (22 recommended).
+Requires Node 20.19+ (Node 22 recommended).
 
-### Configuration
+## How it's built
 
-| Variable | Default | Purpose |
-| --- | --- | --- |
-| `VITE_API_URL` | `https://tangtech-server.onrender.com/api` | Backend REST API base URL |
+| Concern | Approach |
+|---|---|
+| Framework | React 19, React Router 7 (declarative mode), Vite 7 |
+| Content | Plain JS data files in `src/data/` (no API, no database) |
+| Rendering | `vite build` → SSR build of `src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<route>/index.html` for every route, plus `404.html` and `sitemap.xml` |
+| Code splitting | Home is in the main bundle; every other page is lazy-loaded and its chunk is `modulepreload`ed on its own HTML page |
+| Styling | One CSS file with design tokens (`src/styles/global.css`); no UI framework |
+| Icons | Inline SVG (`src/components/Icon.jsx`) |
+| Images | Responsive `srcset` from the Unsplash CDN (auto WebP/AVIF), lazy-loaded, fixed aspect ratio, branded fallback if an image fails |
+| Forms | Netlify Forms (`quote-request`) + WhatsApp fallback |
+| SEO | Per-page title/description/canonical/Open Graph, JSON-LD `ElectricalContractor`, sitemap, 301s for old URLs |
 
-Copy `.env.example` to `.env.local` to override.
+## Editing content
+
+Everything visible on the site lives in `src/data/`:
+
+| File | What it holds |
+|---|---|
+| `site.js` | Phone, email, address, stats, licences (CRB/EWURA/BRELA/TRA), MD quote, milestones, mission/vision |
+| `services.js` | The 7 services and their detail pages |
+| `products.js` | Product categories and the 25 equipment/instrument entries (specs, highlights, example brands) |
+| `projects.js` | Featured case study + project list |
+| `organisations.js` | Partners, client logos/names, training courses |
+| `images.js` | Every photo used on the site (alt text + credit) |
+
+Add a product or service by adding an object to the array. Its page, sitemap entry and prerendered HTML are created automatically on the next build.
+
+### Replacing placeholder photos with your own
+
+The current photos are placeholders from Unsplash (free under the Unsplash License, credited on `/image-credits`). To use your own project photos:
+
+1. Put the file in `public/images/projects/` (WebP or JPG, about 1600 px wide).
+2. In `src/data/images.js`, give the entry a `src`. For example:
+   ```js
+   substation: { src: "/images/projects/800kva-substation.webp", alt: "800 kVA ground-mounted substation we commissioned" },
+   ```
+3. Remove the Unsplash fields (`id`, `page`) from that entry so it no longer appears in the credits.
+
+## Deployment (Netlify)
+
+`netlify.toml` is included: build command `npm run build`, publish directory `dist`.
+
+After the first deploy:
+
+1. **Forms:** open Site → Forms. The `quote-request` form is detected automatically from the prerendered HTML. Under Forms → Notifications, add an email notification to `info@tangtecheng.com`.
+2. **Old URLs:** `public/_redirects` sends `/product/*`, `/service/*`, `/login`, `/register`, `/cart`, `/wishlist`, `/success` and `/customers` to their new pages with 301s.
+3. **Search Console:** submit `https://www.tangtecheng.com/sitemap.xml`.
+
+Other hosts work too (Vercel, Cloudflare Pages, any static host). Only the form handler is Netlify-specific: replace the `fetch("/")` in `src/pages/Contact.jsx` with Formspree or Web3Forms if you move.
 
 ## Project structure
 
 ```
 src/
-  main.tsx            entry: providers, router, idle-time data prefetch
-  App.tsx             route table (every page except Home is lazy-loaded)
-  types.ts            shared API/domain types
-  components/         Layout, Header (responsive nav), Footer, ui primitives, Field, Reveal (scroll animation)
-  pages/              one file per route
-  hooks/              useResource (cached data fetching), usePageMeta (title/description/canonical/OG)
-  lib/                api (fetch client), storage (persistence + legacy migration), format
-  store/              StoreContext – user session, cart, wishlist (useReducer + localStorage)
-  data/content.ts     static business content: services, trainings, partners, customers, team, contact details
-  styles/index.css    Tailwind theme (brand colours sampled from the logo) + motion rules
-public/
-  images/             optimised WebP assets
-  _redirects          SPA fallback (Netlify)
-  _headers            caching + security headers (Netlify)
+  main.jsx            client entry (hydrates prerendered HTML)
+  entry-server.jsx    render(url) used by the prerender script
+  App.jsx             routes (lazy-loaded pages)
+  routes.js           list of URLs to prerender
+  components/         Layout (header/footer), Blocks, Img, Icon
+  pages/              Home, Services, Projects, Products, Trainings, Partners, About, Contact, ImageCredits, NotFound
+  data/               all site content
+  lib/seo.jsx         per-page <head> tags (server + client)
+  styles/global.css   design tokens and all styles
+scripts/prerender.mjs
+public/               logos, icons, robots.txt, _redirects
 ```
-
-## Routes
-
-`/` · `/services` · `/service/:id` · `/products` · `/product/:id` · `/trainings` · `/partners` · `/customers` ·
-`/about-us` · `/contact-us` · `/cart` · `/wishlist` · `/success` · `/login` · `/register` · `*` → 404
-
-## How data and state work
-
-- **Content** (company info, training list, partners…) lives in `src/data/content.ts` – edit text there.
-- **Services/products** come from the REST API (`GET /services`, `GET /products`). `useResource` de-duplicates requests,
-  keeps the last good response in memory + `localStorage`, renders it instantly on reload and refreshes it in the background
-  when older than 5 minutes. Pages show skeletons, a "server is waking up" notice on slow responses, and a retry on failure.
-- **Auth/cart/wishlist** are stored in `localStorage` (`tt:state:v1`). A signed-in session and cart from the previous
-  Redux-persist build are migrated automatically on first load.
-- **API contract** (unchanged): `POST /auth/login`, `POST /auth/register`, `POST /messages`, `POST /orders` (sends the
-  `token: Bearer …` header read at request time).
-
-## Deployment
-
-Static SPA – deploy `dist/` to Netlify, Vercel, Firebase Hosting, etc.
-
-- **Netlify:** `netlify.toml` sets the build and Node version; `public/_redirects` provides the SPA fallback so direct
-  URLs and refreshes work; `public/_headers` sets long-lived immutable caching for hashed `/assets/*`.
-- **Other hosts:** configure an SPA fallback (all unknown paths → `/index.html`) and cache `/assets/*` for a year.

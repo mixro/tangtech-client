@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /cart
-Disallow: /wishlist
-Disallow: /success
-Disallow: /login
-Disallow: /register
 
 Sitemap: https://www.tangtecheng.com/sitemap.xml
